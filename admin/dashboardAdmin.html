@@ -10,53 +10,39 @@
 </head>
 <body>
 
-    <nav class="navbar navbar-light bg-white d-md-none border-bottom px-3 sticky-top">
-        <span class="navbar-brand fw-bold text-primary">LIPTOGENE</span>
-        <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
-            <i class="bi bi-list"></i> Menu
-        </button>
-    </nav>
-
     <div class="sidebar d-none d-md-block">
-        <div class="d-flex align-items-center mb-4">
-            <div class="bg-primary text-white rounded p-2 me-2 fw-bold" style="background: linear-gradient(135deg, #00b4db, #0083b0)!important;">LG</div>
-            <h5 class="mb-0 fw-bold">LIPTOGENE</h5>
+        <div class="d-flex align-items-center mb-5 px-2">
+            <div class="logo-box-square me-2">LG</div>
+            <h5 class="mb-0 fw-bold text-dark">LIPTOGENE</h5>
         </div>
         
-        <p class="text-muted small mt-4">MENU UTAMA</p>
+        <p class="text-muted small px-2 mb-2" style="font-size: 11px;">MENU UTAMA</p>
         <nav class="nav flex-column">
-            <a class="nav-link-custom active" href="#"><i class="bi bi-grid"></i> Dashboard</a>
-            <a class="nav-link-custom" href="#"><i class="bi bi-flask"></i> Laboratorium</a>
+            <a class="nav-link-custom active" href="dashboardAdmin.html"><i class="bi bi-grid"></i> Dashboard</a>
+            <a class="nav-link-custom" href="materi.html"><i class="bi bi-file-text"></i> Laboratorium</a>
             <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> Data Kelas</a>
-            <a class="nav-link-custom" href="#"><i class="bi bi-file-earmark-text"></i> Laporan</a>
-            <a class="nav-link-custom" href="#"><i class="bi bi-shield-lock"></i> Otorisasi</a>
+            
+            <!-- <a class="nav-link-custom" href="#"><i class="bi bi-shield-lock"></i> Otorisasi</a> -->
         </nav>
-    </div>
-
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title fw-bold">Menu Liptogene</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <nav class="nav flex-column">
-                <a class="nav-link-custom active" href="#"><i class="bi bi-grid"></i> Dashboard</a>
-                <a class="nav-link-custom" href="#"><i class="bi bi-flask"></i> Laboratorium</a>
-                <a class="nav-link-custom" href="#"><i class="bi bi-people"></i> Data Kelas</a>
-                <a class="nav-link-custom" href="#"><i class="bi bi-shield-lock"></i> Logout</a>
-            </nav>
-        </div>
     </div>
 
     <div class="main-content">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h4 class="fw-bold m-0">Dashboard Overview</h4>
-            <div class="d-flex align-items-center">
-                <div class="text-end me-3 d-none d-sm-block">
-                    <div class="fw-bold text-dark">Setya Afandi</div>
-                    <small class="text-muted">Admin / Dosen</small>
-                </div>
-                <img src="https://ui-avatars.com/api/?name=Setya+Afandi&background=0083b0&color=fff" class="rounded-circle shadow-sm" width="45">
+            
+            <div class="dropdown user-dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                    <div class="text-end me-3 d-none d-sm-block">
+                        <div class="fw-bold text-dark" style="font-size: 0.9rem;">Setya Afandi</div>
+                        <small class="text-muted" style="font-size: 0.75rem;">Admin / Dosen</small>
+                    </div>
+                    <div class="user-avatar">SA</div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2">
+                    <li><a class="dropdown-item py-2" href="pengaturan.html"><i class="bi bi-gear me-2"></i> Pengaturan</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item py-2 text-danger" href="../login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                </ul>
             </div>
         </div>
 
@@ -64,51 +50,55 @@
             <div class="col-lg-8">
                 <div class="card card-custom h-100 p-4">
                     <div class="row align-items-center h-100">
-                        <div class="col-md-7 z-1">
-                            <h2 class="text-primary fw-bold mb-3">LIPTOGENE</h2>
-                            <p class="text-muted">Selamat datang di Virtual Laboratory. Silakan pilih modul praktikum yang tersedia untuk memulai kelas.</p>
-                            <button class="btn btn-primary-custom text-white btn-sm px-4">Lihat Panduan</button>
+                        <div class="col-md-8">
+                            <h2 class="fw-bold text-primary mb-3">LIPTOGENE</h2>
+                            <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">Selamat datang di Virtual Laboratory. Silakan pilih modul praktikum yang tersedia untuk memulai kelas.</p>
+                            <button class="btn btn-primary-custom text-white mt-2">Lihat Panduan</button>
                         </div>
-                        <div class="col-md-5 text-center d-none d-md-block">
-                            <i class="bi bi-motherboard text-primary opacity-25" style="font-size: 8rem;"></i>
+                        <div class="col-md-4 text-end d-none d-md-block">
+                            <i class="bi bi-cpu text-primary opacity-25" style="font-size: 6rem;"></i>
                         </div>
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4">
-                <div class="stat-card blue">
-                    <div class="stat-number">45</div>
-                    <div>Jumlah Mahasiswa</div>
-                    <small class="opacity-75">Terdaftar dalam kelas</small>
-                    <i class="bi bi-people stat-icon-bg"></i>
+                <div class="card card-custom bg-info text-white p-3 mb-3" style="background: linear-gradient(135deg, #0ea5e9, #22d3ee);">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h2 class="fw-bold mb-0">45</h2>
+                            <small>Jumlah Mahasiswa</small>
+                        </div>
+                        <i class="bi bi-people fs-1 opacity-25"></i>
+                    </div>
+                    <div class="mt-2 badge bg-white bg-opacity-25 fw-normal">Terdaftar dalam kelas</div>
                 </div>
-                <div class="stat-card purple">
-                    <div class="stat-number">345</div>
-                    <div>Aktivitas Lab</div>
-                    <small class="opacity-75">Virtual Lab Digunakan</small>
-                    <i class="bi bi-activity stat-icon-bg"></i>
+
+                <div class="card card-custom bg-purple text-white p-3" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);">
+                    <div class="d-flex justify-content-between align-items-start">
+                        <div>
+                            <h2 class="fw-bold mb-0">345</h2>
+                            <small>Aktivitas Lab</small>
+                        </div>
+                        <i class="bi bi-activity fs-1 opacity-25"></i>
+                    </div>
+                    <div class="mt-2 badge bg-white bg-opacity-25 fw-normal">Virtual Lab Digunakan</div>
                 </div>
             </div>
         </div>
 
         <div class="card card-custom p-4 mb-4">
-            <div class="row align-items-center">
-                <div class="col-md-2 text-center mb-3 mb-md-0">
-                    <div class="bg-light rounded p-3 text-primary">
-                        <i class="bi bi-flask fs-1"></i>
-                    </div>
+            <div class="d-flex align-items-center">
+                <div class="bg-light rounded p-3 me-3 text-primary">
+                    <i class="bi bi-file-text fs-2"></i>
                 </div>
-                <div class="col-md-8">
-                    <h5 class="fw-bold text-dark">Praktikum I - Isolasi DNA Plasmid E.Coli</h5>
-                    <p class="text-muted small mb-0">Prinsip dasar isolasi plasmid adalah pemisahan komponen sel dan DNA genom dengan DNA plasmid berdasarkan berat molekulnya. DNA plasmid yang sirkuler memiliki berat molekul yang lebih rendah.</p>
+                <div class="flex-grow-1">
+                    <h6 class="fw-bold text-dark mb-1">Praktikum I - Isolasi DNA Plasmid E.Coli</h6>
+                    <p class="text-muted small mb-0 text-truncate" style="max-width: 600px;">Prinsip dasar isolasi plasmid adalah pemisahan komponen sel dan DNA genom dengan DNA plasmid.</p>
                 </div>
-                <div class="col-md-2 text-end">
-                     <button class="btn btn-outline-primary btn-sm w-100">Detail</button>
-                </div>
+                <button class="btn btn-outline-primary btn-sm px-4">Detail</button>
             </div>
         </div>
-
         <h6 class="text-muted mb-3 fw-bold">MODUL PRAKTIKUM LAINNYA</h6>
         <div class="row row-cols-2 row-cols-md-4 g-3">
             <div class="col">
@@ -140,7 +130,6 @@
                 </div>
             </div>
         </div>
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
