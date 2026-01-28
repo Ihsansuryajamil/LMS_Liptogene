@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Kelas - Liptogene</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+    <div class="sidebar d-none d-md-block">
+        <div class="d-flex align-items-center mb-4">
+            <div class="bg-primary text-white rounded p-2 me-2 fw-bold" style="background: linear-gradient(135deg, #00b4db, #0083b0)!important;">LG</div>
+            <h5 class="mb-0 fw-bold">LIPTOGENE</h5>
+        </div>
+        
+        <p class="text-muted small mt-4">MENU UTAMA</p>
+        <nav class="nav flex-column">
+            <a class="nav-link-custom" href="dashboardAdmin.html"><i class="bi bi-grid"></i> Dashboard</a>
+            <a class="nav-link-custom" href="#"><i class="bi bi-flask"></i> Laboratorium</a>
+            <a class="nav-link-custom active" href="kelas.html"><i class="bi bi-people"></i> Data Kelas</a>
+            <a class="nav-link-custom" href="#"><i class="bi bi-file-earmark-text"></i> Laporan</a>
+            <a class="nav-link-custom" href="#"><i class="bi bi-shield-lock"></i> Otorisasi</a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="fw-bold m-0">Data Kelas</h4>
+                <p class="text-muted small">Kelola data kelas dan mahasiswa</p>
+            </div>
+            <a href="kelasTambah.html" class="btn btn-primary-custom text-white btn-sm">
+                <i class="bi bi-plus-lg"></i> Tambah Kelas Baru
+            </a>
+        </div>
+
+        <div class="card card-custom p-4">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="bg-light">
+                        <tr>
+                            <th scope="col" width="5%">No</th>
+                            <th scope="col">Nama Kelas</th>
+                            <th scope="col">Dosen Pengampu</th>
+                            <th scope="col">Mahasiswa</th>
+                            <th scope="col">Tahun Ajar</th>
+                            <th scope="col" width="15%">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td><span class="fw-bold">Biologi Molekuler A</span><br><small class="text-muted">BIO-2026-A</small></td>
+                            <td>Dr. Tengku Idris</td>
+                            <td><span class="badge bg-info bg-opacity-10 text-info">45 Siswa</span></td>
+                            <td>2025/2026</td>
+                            <td>
+                                <a href="kelasDetail1.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td><span class="fw-bold">Biologi Molekuler B</span><br><small class="text-muted">BIO-2026-B</small></td>
+                            <td>Bu Meiry, M.Si</td>
+                            <td><span class="badge bg-info bg-opacity-10 text-info">38 Siswa</span></td>
+                            <td>2025/2026</td>
+                            <td>
+                                <a href="kelasDetail2.html" class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></a>
+                                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

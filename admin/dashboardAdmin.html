@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Liptogene</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-white d-md-none border-bottom px-3 sticky-top">
+        <span class="navbar-brand fw-bold text-primary">LIPTOGENE</span>
+        <button class="btn btn-sm btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+            <i class="bi bi-list"></i> Menu
+        </button>
+    </nav>
+
+    <div class="sidebar d-none d-md-block">
+        <div class="d-flex align-items-center mb-4">
+            <div class="bg-primary text-white rounded p-2 me-2 fw-bold" style="background: linear-gradient(135deg, #00b4db, #0083b0)!important;">LG</div>
+            <h5 class="mb-0 fw-bold">LIPTOGENE</h5>
+        </div>
+        
+        <p class="text-muted small mt-4">MENU UTAMA</p>
+        <nav class="nav flex-column">
+            <a class="nav-link-custom active" href="#"><i class="bi bi-grid"></i> Dashboard</a>
+            <a class="nav-link-custom" href="#"><i class="bi bi-flask"></i> Laboratorium</a>
+            <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> Data Kelas</a>
+            <a class="nav-link-custom" href="#"><i class="bi bi-file-earmark-text"></i> Laporan</a>
+            <a class="nav-link-custom" href="#"><i class="bi bi-shield-lock"></i> Otorisasi</a>
+        </nav>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold">Menu Liptogene</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="nav flex-column">
+                <a class="nav-link-custom active" href="#"><i class="bi bi-grid"></i> Dashboard</a>
+                <a class="nav-link-custom" href="#"><i class="bi bi-flask"></i> Laboratorium</a>
+                <a class="nav-link-custom" href="#"><i class="bi bi-people"></i> Data Kelas</a>
+                <a class="nav-link-custom" href="#"><i class="bi bi-shield-lock"></i> Logout</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h4 class="fw-bold m-0">Dashboard Overview</h4>
+            <div class="d-flex align-items-center">
+                <div class="text-end me-3 d-none d-sm-block">
+                    <div class="fw-bold text-dark">Setya Afandi</div>
+                    <small class="text-muted">Admin / Dosen</small>
+                </div>
+                <img src="https://ui-avatars.com/api/?name=Setya+Afandi&background=0083b0&color=fff" class="rounded-circle shadow-sm" width="45">
+            </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+            <div class="col-lg-8">
+                <div class="card card-custom h-100 p-4">
+                    <div class="row align-items-center h-100">
+                        <div class="col-md-7 z-1">
+                            <h2 class="text-primary fw-bold mb-3">LIPTOGENE</h2>
+                            <p class="text-muted">Selamat datang di Virtual Laboratory. Silakan pilih modul praktikum yang tersedia untuk memulai kelas.</p>
+                            <button class="btn btn-primary-custom text-white btn-sm px-4">Lihat Panduan</button>
+                        </div>
+                        <div class="col-md-5 text-center d-none d-md-block">
+                            <i class="bi bi-motherboard text-primary opacity-25" style="font-size: 8rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="stat-card blue">
+                    <div class="stat-number">45</div>
+                    <div>Jumlah Mahasiswa</div>
+                    <small class="opacity-75">Terdaftar dalam kelas</small>
+                    <i class="bi bi-people stat-icon-bg"></i>
+                </div>
+                <div class="stat-card purple">
+                    <div class="stat-number">345</div>
+                    <div>Aktivitas Lab</div>
+                    <small class="opacity-75">Virtual Lab Digunakan</small>
+                    <i class="bi bi-activity stat-icon-bg"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="card card-custom p-4 mb-4">
+            <div class="row align-items-center">
+                <div class="col-md-2 text-center mb-3 mb-md-0">
+                    <div class="bg-light rounded p-3 text-primary">
+                        <i class="bi bi-flask fs-1"></i>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h5 class="fw-bold text-dark">Praktikum I - Isolasi DNA Plasmid E.Coli</h5>
+                    <p class="text-muted small mb-0">Prinsip dasar isolasi plasmid adalah pemisahan komponen sel dan DNA genom dengan DNA plasmid berdasarkan berat molekulnya. DNA plasmid yang sirkuler memiliki berat molekul yang lebih rendah.</p>
+                </div>
+                <div class="col-md-2 text-end">
+                     <button class="btn btn-outline-primary btn-sm w-100">Detail</button>
+                </div>
+            </div>
+        </div>
+
+        <h6 class="text-muted mb-3 fw-bold">MODUL PRAKTIKUM LAINNYA</h6>
+        <div class="row row-cols-2 row-cols-md-4 g-3">
+            <div class="col">
+                <div class="card card-custom p-3 text-center h-100 hover-shadow">
+                    <div class="module-thumb mb-2"><i class="bi bi-layers text-secondary"></i></div>
+                    <small class="fw-bold d-block text-dark">Praktikum II</small>
+                    <small class="text-muted" style="font-size: 11px;">Elektroforesis DNA</small>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom p-3 text-center h-100">
+                    <div class="module-thumb mb-2"><i class="bi bi-eyedropper text-secondary"></i></div>
+                    <small class="fw-bold d-block text-dark">Praktikum III</small>
+                    <small class="text-muted" style="font-size: 11px;">PCR Reaction</small>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom p-3 text-center h-100">
+                    <div class="module-thumb mb-2"><i class="bi bi-bullseye text-secondary"></i></div>
+                    <small class="fw-bold d-block text-dark">Praktikum IV</small>
+                    <small class="text-muted" style="font-size: 11px;">Transfer Gen Gun</small>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card card-custom p-3 text-center h-100">
+                    <div class="module-thumb mb-2"><i class="bi bi-lightning text-secondary"></i></div>
+                    <small class="fw-bold d-block text-dark">Praktikum V</small>
+                    <small class="text-muted" style="font-size: 11px;">Elektroporasi</small>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
