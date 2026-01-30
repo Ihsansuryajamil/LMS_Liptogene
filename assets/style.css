@@ -4,6 +4,73 @@ body {
     background-color: #f8f9fa; /* Background sedikit lebih terang */
     font-size: 0.9rem; /* Ukuran font global diperkecil */
 }
+/* --- SIDEBAR TOGGLE / COLLAPSED STYLES --- */
+
+/* Transisi halus saat sidebar berubah ukuran */
+.sidebar, .main-content {
+    transition: all 0.3s ease;
+}
+
+/* Kondisi Sidebar Mengecil (Desktop) */
+.sidebar.collapsed {
+    width: 80px; /* Lebar hanya cukup untuk ikon */
+}
+
+.sidebar.collapsed .sidebar-text, 
+.sidebar.collapsed .logo-text,
+.sidebar.collapsed small {
+    display: none; /* Sembunyikan teks */
+}
+
+.sidebar.collapsed .logo-box-square {
+    margin-right: 0 !important;
+}
+
+.sidebar.collapsed .nav-link-custom {
+    justify-content: center; /* Ikon ke tengah */
+    padding: 15px 0;
+}
+
+.sidebar.collapsed .nav-link-custom i {
+    margin-right: 0;
+    font-size: 1.4rem;
+}
+
+/* Sesuaikan konten utama saat sidebar mengecil */
+.main-content.expanded {
+    margin-left: 80px;
+}
+
+/* Tombol Toggle Sidebar */
+.sidebar-toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: -15px; /* Keluar sedikit dari sidebar */
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 1px solid #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1001;
+    color: #0083b0;
+}
+
+.sidebar-toggle-btn:hover {
+    background-color: #f8f9fa;
+}
+
+/* Mobile Toggle Button (Navbar) */
+.mobile-nav-toggle {
+    border: none;
+    background: transparent;
+    font-size: 1.5rem;
+    color: #333;
+}
 /* --- NEW SPLIT SCREEN AUTH STYLES --- */
 .auth-container {
     height: 100vh;
@@ -178,6 +245,9 @@ body {
 .user-dropdown .dropdown-toggle::after {
     display: none; /* Hilangkan panah default */
 }
+.materi-dropdown .dropdown-toggle::after {
+    display: none; /* Hilangkan panah default */
+}
 .user-avatar {
     width: 40px;
     height: 40px;
@@ -190,7 +260,18 @@ body {
     justify-content: center;
     font-weight: bold;
 }
-
+.mhs-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: #00b017;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
 /* --- TABLE COMPACT --- */
 .table-compact th {
     font-size: 0.8rem;
@@ -334,4 +415,41 @@ body.landing-page {
 @media (max-width: 768px) {
     .sidebar { display: none; }
     .main-content { margin-left: 0; padding: 15px; }
+}
+/* Custom Icon SVG Style */
+.icon-microscope {
+    width: 16px;
+    height: 16px;
+    fill: currentColor; /* Mengikuti warna teks (text-primary) */
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 8px; /* Jarak ke teks */
+}
+/* --- PROGRESS PAGE STYLES --- */
+
+/* Membuat ikon status bisa diklik */
+.status-clickable {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.status-clickable:hover {
+    transform: scale(1.2); /* Efek membesar sedikit saat di-hover */
+}
+
+/* Styling Gambar di dalam Modal */
+.modal-evidence-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #dee2e6;
+    margin-bottom: 10px;
+    background-color: #f8f9fa;
+}
+
+/* Styling Search Bar agar rounded */
+.search-rounded {
+    border-radius: 50px;
+    padding-left: 20px;
 }
