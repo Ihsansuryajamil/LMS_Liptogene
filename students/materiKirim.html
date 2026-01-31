@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirim Tugas - Libtrogen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-white d-md-none border-bottom px-3 sticky-top">
+        <div class="d-flex align-items-center">
+            <button class="mobile-nav-toggle me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+                <i class="bi bi-list"></i>
+            </button>
+            <span class="navbar-brand fw-bold text-primary mb-0 h1">Libtrogen</span>
+        </div>
+    </nav>
+
+    <div class="sidebar d-none d-md-block" id="sidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSidebar()">
+            <i class="bi bi-chevron-left" id="toggleIcon"></i>
+        </div>
+
+        <div class="d-flex align-items-center mb-5 px-2">
+            <div class="logo-box-square me-2">Logo</div>
+            <h5 class="mb-0 fw-bold text-dark logo-text">Libtrogen</h5>
+        </div>
+        
+        <p class="text-muted small px-2 mb-2 sidebar-text" style="font-size: 11px;">MENU UTAMA</p>
+        <nav class="nav flex-column">
+            <a class="nav-link-custom" href="dashboardAdmin.html"><i class="bi bi-grid"></i> <span class="sidebar-text">Dashboard</span></a>
+            <a class="nav-link-custom" href="materi.html"><i class="bi bi-file-text"></i> <span class="sidebar-text">Materi</span></a>
+            <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> <span class="sidebar-text">Data Kelas</span></a>
+            <a class="nav-link-custom" href="progres.html"><i class="bi bi-bar-chart"></i> <span class="sidebar-text">Progress</span></a>
+            <a class="nav-link-custom" href="../admin/penilaian.html"><i class="bi bi-award"></i> <span class="sidebar-text">Penilaian</span></a>
+        </nav>
+        <p class="text-muted small px-2 mb-2 sidebar-text mt-3" style="font-size: 11px;">MENU MAHASISWA</p>
+        
+        <nav class="nav flex-column">
+            <a class="nav-link-custom active" href="materi.html">
+                <i class="bi bi-journal-text"></i> <span class="sidebar-text">Materi</span>
+            </a>
+            <a class="nav-link-custom" href="../students/laporanPraktikum.html">
+                <i class="bi bi-clipboard-data"></i> <span class="sidebar-text">Laporan Praktikum</span>
+            </a>
+            <a class="nav-link-custom" href="../students/laporanProject.html">
+                <i class="bi bi-folder-check"></i> <span class="sidebar-text">Laporan Project</span>
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="fw-bold">Kirim Bukti Pengerjaan</h4>
+            </div>
+            <div class="d-flex align-items-center gap-3">
+                <a href="materi.html" class="btn btn-outline-secondary btn-sm px-3">
+                    <i class="bi bi-arrow-left"></i> Kembali
+                </a>
+                <div class="dropdown user-dropdown">
+                    <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                        <!-- <div class="text-end me-3 d-none d-sm-block">
+                            <div class="fw-bold text-dark" style="font-size: 0.9rem;">Didin</div>
+                            <small class="text-muted" style="font-size: 0.75rem;">Mahasiswa</small>
+                        </div> -->
+                        <div class="mhs-avatar">DI</div>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2">
+                        <li><a class="dropdown-item py-2" href="pengaturan.html">Pengaturan</a></li>
+                        <li><a class="dropdown-item py-2 text-danger" href="../login.html">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-md-8 mb-4">
+                <div class="card card-custom p-4">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Nama Materi</label>
+                            <input type="text" class="form-control form-control-custom" value="Praktikum I - Isolasi DNA Plasmid E.Coli" readonly style="background-color: #e9ecef;">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Kirim Foto Laporan Sementara</label>
+                            <input type="file" class="form-control form-control-custom" accept="image/*" style="font-size: 0.9rem;">
+                            <div class="form-text text-muted small">Format: JPG, PNG. Maksimal 2MB.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Kirim Screenshot Hasil VLab</label>
+                            <input type="file" class="form-control form-control-custom" accept="image/*" style="font-size: 0.9rem;">
+                            <div class="form-text text-muted small">Format: JPG, PNG. Maksimal 2MB.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold small">Kirim ScreenshotPengerjaan Self Assessment</label>
+                            <input type="file" class="form-control form-control-custom" accept="image/*" style="font-size: 0.9rem;">
+                            <div class="form-text text-muted small">Format: JPG, PNG. Maksimal 2MB.</div>
+                        </div>
+
+                        <div class="mb-3" id="btnRemedialContainer">
+                            <button type="button" class="btn btn-sm btn-warning text-dark" onclick="showRemedial()">
+                                <i class="bi bi-plus-circle me-1"></i> Tambah Data Remedial
+                            </button>
+                        </div>
+
+                        <div class="mb-3 d-none" id="inputRemedialContainer">
+                            <div class="p-3 bg-light rounded border">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <label class="form-label fw-bold small text-danger mb-0">Kirim Screenshot GForm Remedial</label>
+                                    <button type="button" class="btn-close btn-sm" onclick="hideRemedial()" aria-label="Close"></button>
+                                </div>
+                                <input type="file" class="form-control form-control-custom" accept="image/*" style="font-size: 0.9rem;">
+                                <div class="form-text text-muted small">Format: JPG, PNG. Maksimal 2MB. Hanya diisi jika melakukan remedial.</div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-end gap-2 mt-4">
+                            <a href="materi.html" class="btn btn-light text-muted btn-sm px-3">Batal</a>
+                            <button type="submit" class="btn btn-primary-custom text-white px-4">Kirim</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card card-custom p-4 border-0 bg-info bg-opacity-10">
+                    <h6 class="fw-bold text-primary mb-2"><i class="bi bi-info-circle me-1"></i> Informasi</h6>
+                    <p class="small text-muted mb-0" style="line-height: 1.6;">
+                        Pastikan foto yang diunggah jelas dan terbaca. Jika kamu mengirim ulang bukti, maka bukti sebelumnya akan tertimpa (dihapus).
+                    </p>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div class="card card-custom p-4 border-0">
+                    <h6 class="fw-bold text-primary mb-4"><i class="bi bi-clock-history me-1"></i> Riwayat Pengiriman</h6>
+                    
+                    <div class="row g-4">
+                        <div class="col-md-4">
+                            <div class="card h-100 border shadow-sm">
+                                <div class="card-body p-3">
+                                    <h6 class="fw-bold text-dark mb-2" style="font-size: 0.9rem;">Laporan Sementara</h6>
+                                    <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop" class="modal-evidence-img w-100 mb-2" style="height: 150px; object-fit: cover; border-radius: 6px;" alt="Laporan">
+                                    <label class="form-label small text-muted mb-0">Terkirim: 2026-01-27 08:30</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border shadow-sm">
+                                <div class="card-body p-3">
+                                    <h6 class="fw-bold text-primary mb-2" style="font-size: 0.9rem;">Hasil V-Lab</h6>
+                                    <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop" class="modal-evidence-img w-100 mb-2" style="height: 150px; object-fit: cover; border-radius: 6px;" alt="V-Lab">
+                                    <label class="form-label small text-muted mb-0">Terkirim: 2026-01-27 08:45</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="card h-100 border shadow-sm">
+                                <div class="card-body p-3">
+                                    <h6 class="fw-bold text-danger mb-2" style="font-size: 0.9rem;">GForm Remedial</h6>
+                                    <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?q=80&w=2072&auto=format&fit=crop" class="modal-evidence-img w-100 mb-2" style="height: 150px; object-fit: cover; border-radius: 6px;" alt="Remedial">
+                                    <label class="form-label small text-muted mb-0">Terkirim: 2026-01-27 09:00</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Toggle Sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            const toggleIcon = document.getElementById('toggleIcon');
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('expanded');
+            if (sidebar.classList.contains('collapsed')) {
+                toggleIcon.classList.remove('bi-chevron-left');
+                toggleIcon.classList.add('bi-chevron-right');
+            } else {
+                toggleIcon.classList.remove('bi-chevron-right');
+                toggleIcon.classList.add('bi-chevron-left');
+            }
+        }
+
+        // Logic Tombol Remedial
+        function showRemedial() {
+            // Sembunyikan tombol tambah
+            document.getElementById('btnRemedialContainer').classList.add('d-none');
+            // Munculkan input remedial
+            document.getElementById('inputRemedialContainer').classList.remove('d-none');
+        }
+
+        function hideRemedial() {
+            // Munculkan kembali tombol tambah
+            document.getElementById('btnRemedialContainer').classList.remove('d-none');
+            // Sembunyikan input remedial
+            document.getElementById('inputRemedialContainer').classList.add('d-none');
+            // Opsional: Reset value input file jika dibatalkan
+            // document.querySelector('#inputRemedialContainer input').value = '';
+        }
+    </script>
+</body>
+</html>

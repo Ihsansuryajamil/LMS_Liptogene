@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -26,7 +24,7 @@
             <i class="bi bi-chevron-left" id="toggleIcon"></i>
         </div>
         <div class="d-flex align-items-center mb-5 px-2">
-            <div class="logo-box-square me-2">LG</div>
+            <div class="logo-box-square me-2">Logo</div>
             <h5 class="mb-0 fw-bold text-dark logo-text">Libtrogen</h5>
         </div>
         <p class="text-muted small px-2 mb-2 sidebar-text" style="font-size: 11px;">MENU UTAMA</p>
@@ -35,22 +33,38 @@
             <a class="nav-link-custom" href="materi.html"><i class="bi bi-file-text"></i> <span class="sidebar-text">Materi</span></a>
             <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> <span class="sidebar-text">Data Kelas</span></a>
             <a class="nav-link-custom active" href="progres.html"><i class="bi bi-bar-chart"></i> <span class="sidebar-text">Progress</span></a>
+            <a class="nav-link-custom" href="penilaian.html"><i class="bi bi-award"></i> <span class="sidebar-text">Penilaian</span></a>
         </nav>
-        <p class="text-muted small px-2 mb-2 sidebar-text" style="font-size: 11px;">MENU MAHASISWA</p>
+        <p class="text-muted small px-2 mb-2 sidebar-text mt-3" style="font-size: 11px;">MENU MAHASISWA</p>
         
         <nav class="nav flex-column">
             <a class="nav-link-custom" href="../students/materi.html">
-                <i class="bi bi-file-text"></i> <span class="sidebar-text">Materi</span>
+                <i class="bi bi-journal-text"></i> <span class="sidebar-text">Materi</span>
             </a>
-            <a class="nav-link-custom" href="materi.html">
-                <i class="bi bi-file-text"></i> <span class="sidebar-text">Laporan Praktikum</span>
+            <a class="nav-link-custom" href="../students/laporanPraktikum.html">
+                <i class="bi bi-clipboard-data"></i> <span class="sidebar-text">Laporan Praktikum</span>
             </a>
-            <a class="nav-link-custom" href="materi.html">
-                <i class="bi bi-file-text"></i> <span class="sidebar-text">Laporan Project</span>
+            <a class="nav-link-custom" href="../students/laporanProject.html">
+                <i class="bi bi-folder-check"></i> <span class="sidebar-text">Laporan Project</span>
             </a>
         </nav>
     </div>
-
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold">Menu Libtrogen</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="nav flex-column">
+                <a class="nav-link-custom" href="dashboardAdmin.html"><i class="bi bi-grid"></i> Dashboard</a>
+                <a class="nav-link-custom" href="materi.html"><i class="bi bi-file-text"></i> Materi</a>
+                <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> Data Kelas</a>
+                <a class="nav-link-custom active" href="progres.html"><i class="bi bi-bar-chart"></i> Progress</a>
+                <a class="nav-link-custom" href="penilaian.html"><i class="bi bi-award"></i> <span class="sidebar-text">Penilaian</span></a>
+                <a class="nav-link-custom text-danger mt-3" href="../login.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </nav>
+        </div>
+    </div>
     <div class="main-content" id="mainContent">
         
         <div class="d-flex justify-content-between align-items-center mb-4">
@@ -82,9 +96,9 @@
             </div>
             <div class="col-md-3">
                 <select class="form-select rounded-pill">
-                    <option selected>Semua Kelas</option>
-                    <option value="1">Biologi Molekuler A</option>
-                    <option value="2">Biologi Molekuler B</option>
+                    <option selected>Kelas: Biologi Molekuler A</option>
+                    <option value="1">Kelas: Biologi Molekuler B</option>
+                    <option value="2">Semua Kelas</option>
                 </select>
             </div>
             <div class="col-md-5 text-end">
@@ -195,6 +209,16 @@
                         <div class="row">
                             <div class="col-md-6 mb-4 mb-md-0">
                                 <h6 class="fw-bold text-primary mb-3">Screenshoot Hasil VLab</h6>
+                                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop" class="modal-evidence-img" alt="V-Lab">
+                                <!-- <label class="form-label small text-muted">Tanggal Penyelesaian</label>
+                                <input type="text" class="form-control" value="2026-01-27 08:45" readonly> -->
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label small text-muted">Tanggal Pengiriman</label>
+                                <input type="text" class="form-control mb-2" value="2026-01-27 08:30" readonly>
+                            </div>
+                            <div class="col-md-6 mb-4 mb-md-0">
+                                <h6 class="fw-bold text-primary mb-3 mt-1">Screenshoot Pengerjaan Self Assessment</h6>
                                 <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?q=80&w=2070&auto=format&fit=crop" class="modal-evidence-img" alt="V-Lab">
                                 <!-- <label class="form-label small text-muted">Tanggal Penyelesaian</label>
                                 <input type="text" class="form-control" value="2026-01-27 08:45" readonly> -->

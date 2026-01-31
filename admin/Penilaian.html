@@ -1,0 +1,368 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penilaian - Libtrogen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-light bg-white d-md-none border-bottom px-3 sticky-top">
+        <div class="d-flex align-items-center">
+            <button class="mobile-nav-toggle me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar">
+                <i class="bi bi-list"></i>
+            </button>
+            <span class="navbar-brand fw-bold text-primary mb-0 h1">Libtrogen</span>
+        </div>
+    </nav>
+
+    <div class="sidebar d-none d-md-block" id="sidebar">
+        <div class="sidebar-toggle-btn" onclick="toggleSidebar()">
+            <i class="bi bi-chevron-left" id="toggleIcon"></i>
+        </div>
+        <div class="d-flex align-items-center mb-5 px-2">
+            <div class="logo-box-square me-2">Logo</div>
+            <h5 class="mb-0 fw-bold text-dark logo-text">Libtrogen</h5>
+        </div>
+        <p class="text-muted small px-2 mb-2 sidebar-text" style="font-size: 11px;">MENU UTAMA</p>
+        <nav class="nav flex-column">
+            <a class="nav-link-custom" href="dashboardAdmin.html"><i class="bi bi-grid"></i> <span class="sidebar-text">Dashboard</span></a>
+            <a class="nav-link-custom" href="materi.html"><i class="bi bi-file-text"></i> <span class="sidebar-text">Materi</span></a>
+            <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> <span class="sidebar-text">Data Kelas</span></a>
+            <a class="nav-link-custom" href="progres.html"><i class="bi bi-bar-chart"></i> <span class="sidebar-text">Progress</span></a>
+            <a class="nav-link-custom active" href="penilaian.html"><i class="bi bi-award"></i> <span class="sidebar-text">Penilaian</span></a>
+        </nav>
+        <p class="text-muted small px-2 mb-2 sidebar-text mt-3" style="font-size: 11px;">MENU MAHASISWA</p>
+        
+        <nav class="nav flex-column">
+            <a class="nav-link-custom" href="../students/materi.html">
+                <i class="bi bi-journal-text"></i> <span class="sidebar-text">Materi</span>
+            </a>
+            <a class="nav-link-custom" href="../students/laporanPraktikum.html">
+                <i class="bi bi-clipboard-data"></i> <span class="sidebar-text">Laporan Praktikum</span>
+            </a>
+            <a class="nav-link-custom" href="../students/laporanProject.html">
+                <i class="bi bi-folder-check"></i> <span class="sidebar-text">Laporan Project</span>
+            </a>
+        </nav>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="mobileSidebar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title fw-bold">Menu Libtrogen</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <nav class="nav flex-column">
+                <a class="nav-link-custom" href="dashboardAdmin.html"><i class="bi bi-grid"></i> Dashboard</a>
+                <a class="nav-link-custom" href="materi.html"><i class="bi bi-file-text"></i> Materi</a>
+                <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> Data Kelas</a>
+                <a class="nav-link-custom" href="progres.html"><i class="bi bi-bar-chart"></i> Progress</a>
+                <a class="nav-link-custom active" href="penilaian.html"><i class="bi bi-award"></i> <span class="sidebar-text">Penilaian</span></a>
+                <a class="nav-link-custom text-danger mt-3" href="../login.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
+            </nav>
+        </div>
+    </div>
+
+    <div class="main-content" id="mainContent">
+        
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div>
+                <h4 class="fw-bold m-0">Penilaian Mahasiswa</h4>
+            </div>
+            <div class="dropdown user-dropdown">
+                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
+                    <div class="text-end me-3 d-none d-sm-block">
+                        <div class="fw-bold text-dark" style="font-size: 0.9rem;">Bpk Tengku Idris</div>
+                        <small class="text-muted" style="font-size: 0.75rem;">Admin / Dosen</small>
+                    </div>
+                    <div class="user-avatar">SA</div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2">
+                    <li><a class="dropdown-item py-2" href="pengaturan.html"><i class="bi bi-gear me-2"></i> Pengaturan</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item py-2 text-danger" href="../login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-md-4 mb-2 mb-md-0">
+                <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0 rounded-start-pill ps-3"><i class="bi bi-search text-muted"></i></span>
+                    <input type="text" class="form-control border-start-0 rounded-end-pill" placeholder="Cari Nama / NIM Mahasiswa...">
+                </div>
+            </div>
+            <div class="col-md-3">
+                <select class="form-select rounded-pill">
+                    <option selected>Kelas: Biologi Molekuler A</option>
+                    <option value="1">Kelas: Biologi Molekuler B</option>
+                    <option value="2">Semua Kelas</option>
+                </select>
+            </div>
+            <div class="col-md-5 text-end">
+                 <button class="btn btn-success btn-sm rounded-pill px-3"><i class="bi bi-file-excel me-1"></i> Export Data</button>
+            </div>
+        </div>
+
+        <div class="card card-custom p-4">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered align-middle table-compact text-center">
+                    <thead class="table-light">
+                        <tr>
+                            <th width="5%" rowspan="2" class="align-middle">No</th>
+                            <th rowspan="2" class="align-middle text-start">Nama & NIM</th>
+                            <th colspan="6" class="text-center">Laporan Praktikum (V-LAB)</th>
+                            <th width="20%" rowspan="2" class="align-middle">Laporan Project</th>
+                        </tr>
+                        <tr>
+                            <th width="5%">I</th>
+                            <th width="5%">II</th>
+                            <th width="5%">III</th>
+                            <th width="5%">IV</th>
+                            <th width="5%">V</th>
+                            <th width="5%">VI</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td class="text-start">
+                                <div class="fw-bold">Dian Pratiwi</div>
+                                <small class="text-muted">7214839056</small>
+                            </td>
+                           
+                            <td class="text-success status-clickable" onclick="openGradingModal('Dian Pratiwi', '7214839056', 'Laporan_VLab1_Dian.pdf', '27 Jan 2026', 85)">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </td>
+                            
+                            <td class="text-success status-clickable" onclick="openGradingModal('Dian Pratiwi', '7214839056', 'Laporan_VLab2_Dian.pdf', '28 Jan 2026', 80)">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </td>
+                            
+                            <td class="text-muted">-</td>
+                            <td class="text-muted">-</td>
+                            <td class="text-muted">-</td>
+                            <td class="text-muted">-</td>
+                            
+                            <td class="text-center">
+                                <a href="#" class="text-decoration-none text-center  small mb-1" 
+                                onclick="openProjectModal('Dian Pratiwi', '7214839056', 'Laporan_Project_Dian.pdf', 'Presentasi_Dian.pptx', '30 Jan 2026', '')">
+                                    
+                                    <div class="d-flex align-items-center  text-center ">
+                                        <i class="bi bi-folder-check text-primary me-2 fs-5"></i> 
+                                        <div>
+                                            <span class="fw-bold  text-center text-dark">Project Akhir</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td>2</td>
+                            <td class="text-start">
+                                <div class="fw-bold">Rizky Nugroho</div>
+                                <small class="text-muted">7214839057</small>
+                            </td>
+                            
+                            <td class="text-success status-clickable" onclick="openGradingModal('Rizky Nugroho', '7214839057', 'Laporan_VLab1_Rizky.pdf', '26 Jan 2026', 78)">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </td>
+                            <td class="text-muted">-</td>
+                            <td class="text-muted">-</td>
+                            <td class="text-muted">-</td>
+                            <td class="text-muted">-</td>
+                            <td class="text-muted">-</td>
+                            <td class="text-muted small text-start">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="projectGradingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-light">
+                    <h6 class="modal-title fw-bold"><i class="bi bi-folder-check me-2"></i>Penilaian Project Akhir</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-muted small fw-bold mb-0">NAMA</label>
+                            <div class="fw-bold text-dark" id="projNama">Nama Siswa</div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-muted small fw-bold mb-0">NIM</label>
+                            <div class="fw-bold text-dark" id="projNim">12345678</div>
+                        </div>
+                    </div>
+
+                    <hr class="my-2 border-secondary-subtle">
+
+                    <div class="mb-4 mt-3">
+                        <label class="form-label fw-bold small text-dark mb-2">File Terlampir</label>
+                        
+                        <div class="card card-body p-2 d-flex flex-row align-items-center bg-light border-0 mb-2">
+                            <div class="me-3 text-danger"><i class="bi bi-file-earmark-pdf-fill fs-3"></i></div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <small class="text-muted d-block" style="font-size: 10px;">LAPORAN</small>
+                                <a href="../Materi Isolasi DNA Plasmid E.pdf" target="_blank" class="fw-bold text-decoration-none text-dark d-block text-truncate" id="projLinkPdf">File_Laporan.pdf</a>
+                            </div>
+                            <a href="../Materi Isolasi DNA Plasmid E.pdf" class="btn btn-sm btn-outline-secondary ms-2"><i class="bi bi-download"></i></a>
+                        </div>
+
+                        <div class="card card-body p-2 d-flex flex-row align-items-center bg-light border-0">
+                            <div class="me-3 text-warning"><i class="bi bi-file-earmark-ppt-fill fs-3"></i></div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <small class="text-muted d-block" style="font-size: 10px;">PRESENTASI</small>
+                                <a href="../Laporan Project (contoh).pptx" target="_blank" class="fw-bold text-decoration-none text-dark d-block text-truncate" id="projLinkPpt">File_Presentasi.pptx</a>
+                            </div>
+                            <a href="../Laporan Project (contoh).pptx" class="btn btn-sm btn-outline-secondary ms-2"><i class="bi bi-download"></i></a>
+                        </div>
+
+                        <div class="text-end mt-2"><small class="text-muted fst-italic" id="projDate">Dikirim: -</small></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold small">Nilai Project</label>
+                            <input type="number" class="form-control text-center fw-bold text-primary border-primary" id="projNilai" placeholder="0">
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <label class="form-label fw-bold small">Komentar Dosen</label>
+                            <textarea class="form-control" rows="2" placeholder="Masukan umpan balik..."></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+                    <button type="button" class="btn btn-light text-muted" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom text-white px-4">Kirim Penilaian</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="gradingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-light">
+                    <h6 class="modal-title fw-bold" id="modalTitle"><i class="bi bi-pencil-square me-2"></i>Form Penilaian</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-muted small fw-bold mb-0">NAMA MAHASISWA</label>
+                            <div class="fw-bold text-dark" id="modalNama">Nama Siswa</div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-muted small fw-bold mb-0">NIM</label>
+                            <div class="fw-bold text-dark" id="modalNim">12345678</div>
+                        </div>
+                    </div>
+
+                    <hr class="my-2 border-secondary-subtle">
+
+                    <div class="mb-3 mt-3">
+                        <label class="form-label fw-bold small text-dark mb-2">File Laporan</label>
+                        <div class="card card-body p-2 d-flex flex-row align-items-center bg-light border-0">
+                            <div class="me-3 text-danger"><i class="bi bi-file-earmark-pdf-fill fs-3"></i></div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <a href="../Materi Isolasi DNA Plasmid E.pdf" target="_blank" class="fw-bold text-decoration-none text-dark d-block text-truncate" id="modalLinkFile">Nama_File.pdf</a>
+                                <div class="text-muted small" id="modalDate">Dikirim: -</div>
+                            </div>
+                            <a href="../Materi Isolasi DNA Plasmid E.pdf" download class="btn btn-sm btn-outline-secondary ms-2" title="Download File">
+                                <i class="bi bi-download"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label fw-bold small">Nilai (0-100)</label>
+                            <input type="number" class="form-control text-center fw-bold text-primary border-primary" id="modalNilai" placeholder="0" min="0" max="100">
+                        </div>
+                        <div class="col-md-8 mb-3">
+                            <label class="form-label fw-bold small">Komentar Dosen</label>
+                            <textarea class="form-control" rows="2" placeholder="Berikan masukan..."></textarea>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+                    <button type="button" class="btn btn-light text-muted" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom text-white px-4" onclick="alert('Nilai berhasil disimpan!')">
+                        <i class="bi bi-send me-2"></i> Kirim Penilaian
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Toggle Sidebar
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            const mainContent = document.getElementById('mainContent');
+            const toggleIcon = document.getElementById('toggleIcon');
+            sidebar.classList.toggle('collapsed');
+            mainContent.classList.toggle('expanded');
+            if (sidebar.classList.contains('collapsed')) {
+                toggleIcon.classList.remove('bi-chevron-left');
+                toggleIcon.classList.add('bi-chevron-right');
+            } else {
+                toggleIcon.classList.remove('bi-chevron-right');
+                toggleIcon.classList.add('bi-chevron-left');
+            }
+        }
+
+        // --- LOGIKA MODAL PENILAIAN ---
+        function openGradingModal(nama, nim, filename, date, nilai) {
+            // 1. Isi Data ke Modal
+            document.getElementById('modalNama').innerText = nama;
+            document.getElementById('modalNim').innerText = nim;
+            
+            // Set Link Text & Date
+            const linkElement = document.getElementById('modalLinkFile');
+            linkElement.innerText = filename;
+            document.getElementById('modalDate').innerText = "Dikirim: " + date;
+
+            // Set Nilai (jika ada)
+            document.getElementById('modalNilai').value = nilai;
+
+            // 2. Tampilkan Modal
+            var gradingModal = new bootstrap.Modal(document.getElementById('gradingModal'));
+            gradingModal.show();
+        }
+    // --- FUNGSI BARU: MODAL KHUSUS PROJECT (2 FILE) ---
+        function openProjectModal(nama, nim, pdfName, pptName, date, nilai) {
+            // 1. Set Info Dasar
+            document.getElementById('projNama').innerText = nama;
+            document.getElementById('projNim').innerText = nim;
+            document.getElementById('projDate').innerText = "Dikirim: " + date;
+            document.getElementById('projNilai').value = nilai;
+
+            // 2. Set Nama File PDF & PPT
+            // (Disini href-nya saya buat dummy '#', nanti bisa diganti link asli)
+            document.getElementById('projLinkPdf').innerText = pdfName;
+            document.getElementById('projLinkPpt').innerText = pptName;
+
+            // 3. Tampilkan Modal Project
+            var myModal = new bootstrap.Modal(document.getElementById('projectGradingModal'));
+            myModal.show();
+        }
+    </script>
+    
+</body>
+</html>
