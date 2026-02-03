@@ -41,7 +41,7 @@
         
         <nav class="nav flex-column">
             <a class="nav-link-custom" href="../students/materi.html">
-                <i class="bi bi-journal-text"></i> <span class="sidebar-text">Materi</span>
+                <i class="bi bi-journal-text"></i> <span class="sidebar-text">Praktikum</span>
             </a>
             <a class="nav-link-custom" href="../students/laporanPraktikum.html">
                 <i class="bi bi-clipboard-data"></i> <span class="sidebar-text">Laporan Praktikum</span>
@@ -117,15 +117,23 @@
                             <th width="5%" rowspan="2" class="align-middle">No</th>
                             <th rowspan="2" class="align-middle text-start">Nama & NIM</th>
                             <th colspan="6" class="text-center">Laporan Praktikum (V-LAB)</th>
-                            <th width="20%" rowspan="2" class="align-middle">Laporan Project</th>
+                            <th colspan="4" class="text-center">Laporan Akhir</th>
+                            <!-- <th width="15%" rowspan="2" class="align-middle">Laporan Project</th>
+                            <th width="15%" rowspan="2" class="align-middle">Kemampuan Meta Kognisi</th>
+                            <th width="15%" rowspan="2" class="align-middle">Kemampuan Self_sistem</th>
+                            <th width="15%" rowspan="2" class="align-middle">Penguasaan Konsep</th> -->
                         </tr>
-                        <tr>
+                        <tr class="align-top">
                             <th width="5%">I</th>
                             <th width="5%">II</th>
                             <th width="5%">III</th>
                             <th width="5%">IV</th>
                             <th width="5%">V</th>
                             <th width="5%">VI</th>
+                            <th width="5%">Laporan Project</th>
+                            <th width="5%">Kemampuan Meta Kognisi</th>
+                            <th width="5%">Kemampuan Self_sistem</th>
+                            <th width="5%">Penguasaan Konsep</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -150,16 +158,26 @@
                             <td class="text-muted">-</td>
                             
                             <td class="text-center">
-                                <a href="#" class="text-decoration-none text-center  small mb-1" 
-                                onclick="openProjectModal('Dian Pratiwi', '7214839056', 'Laporan_Project_Dian.pdf', 'Presentasi_Dian.pptx', '30 Jan 2026', '')">
-                                    
-                                    <div class="d-flex align-items-center  text-center ">
-                                        <i class="bi bi-folder-check text-primary me-2 fs-5"></i> 
-                                        <div>
-                                            <span class="fw-bold  text-center text-dark">Project Akhir</span>
-                                        </div>
-                                    </div>
+                                <a href="#" class="text-decoration-none" 
+                                onclick="openProjectModal('Dian Pratiwi', '7214839056', 'Project.pdf', 'Presentasi.pptx', '30 Jan 2026', '')">
+                                    <i class="bi bi-file-earmark-text-fill text-warning fs-5"></i>
                                 </a>
+                            </td>
+                            
+
+                            <td class="text-success text-center status-clickable" 
+                                onclick="openSimpleGradingModal('Kemampuan Meta Kognisi', 'Dian Pratiwi', '7214839056', 'Meta_Dian.pdf', '31 Jan 2026', 85)">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </td>
+
+                            <td class="text-success text-center status-clickable" 
+                                onclick="openSimpleGradingModal('Kemampuan Self Sistem', 'Dian Pratiwi', '7214839056', 'Self_Dian.pdf', '31 Jan 2026', 88)">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </td>
+
+                            <td class="text-success text-center status-clickable" 
+                                onclick="openSimpleGradingModal('Penguasaan Konsep', 'Dian Pratiwi', '7214839056', 'Konsep_Dian.pdf', '31 Jan 2026', 90)">
+                                <i class="bi bi-check-circle-fill"></i>
                             </td>
                         </tr>
                         
@@ -178,10 +196,80 @@
                             <td class="text-muted">-</td>
                             <td class="text-muted">-</td>
                             <td class="text-muted">-</td>
-                            <td class="text-muted small text-start">-</td>
+                            <td class="text-center">
+                                <a href="#" class="text-decoration-none" 
+                                onclick="openProjectModal('Rizky Nugroho', '7214839057', 'Project.pdf', 'Presentasi.pptx', '30 Jan 2026', 97)">
+                                    <i class="bi bi-file-earmark-text-fill text-success fs-5"></i>
+                                </a>
+                            </td>
+                            <td class="text-warning text-center status-clickable" 
+                                onclick="openSimpleGradingModal('Kemampuan Meta Kognisi', 'Rizky Nugroho', '7214839057', 'Meta_Rizky.pdf', '31 Jan 2026', '')">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </td>
+
+                            <td class="text-success text-center status-clickable" 
+                                onclick="openSimpleGradingModal('Kemampuan Self Sistem', 'Rizky Nugroho', '7214839057', 'Self_Rizky.pdf', '31 Jan 2026', 88)">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </td>
+
+                            <td class="text-success text-center status-clickable" 
+                                onclick="openSimpleGradingModal('Penguasaan Konsep', 'Rizky Nugroho', '7214839057', 'Konsep_Rizky.pdf', '31 Jan 2026', 90)">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="simpleGradingModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content border-0 shadow">
+                <div class="modal-header bg-light">
+                    <h6 class="modal-title fw-bold" id="simpleModalTitle">
+                        <i class="bi bi-pencil-square me-2"></i>Penilaian
+                    </h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body p-4">
+                    
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-muted small fw-bold mb-0">NAMA MAHASISWA</label>
+                            <div class="fw-bold text-dark" id="simpleModalNama">Nama Siswa</div>
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-muted small fw-bold mb-0">NIM</label>
+                            <div class="fw-bold text-dark" id="simpleModalNim">12345678</div>
+                        </div>
+                    </div>
+
+                    <hr class="my-2 border-secondary-subtle">
+
+                    <div class="mb-4 mt-3">
+                        <label class="form-label fw-bold small text-dark mb-2">File Laporan</label>
+                        <div class="card card-body p-2 d-flex flex-row align-items-center bg-light border-0">
+                            <div class="me-3 text-danger"><i class="bi bi-file-earmark-pdf-fill fs-3"></i></div>
+                            <div class="flex-grow-1 overflow-hidden">
+                                <a href="#" class="fw-bold text-decoration-none text-dark d-block text-truncate" id="simpleModalLinkFile">File.pdf</a>
+                                <div class="text-muted small" id="simpleModalDate">Dikirim: -</div>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-outline-secondary ms-2"><i class="bi bi-download"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label fw-bold small">Nilai (0-100)</label>
+                        <input type="number" class="form-control text-center fw-bold text-primary border-primary" id="simpleModalNilai" placeholder="0" min="0" max="100" style="font-size: 1.2rem;">
+                    </div>
+
+                </div>
+                <div class="modal-footer border-top-0 pt-0 pb-4 px-4">
+                    <button type="button" class="btn btn-light text-muted" data-bs-dismiss="modal">Tutup</button>
+                    <button type="button" class="btn btn-primary-custom text-white px-4">
+                        <i class="bi bi-save me-2"></i> Simpan Nilai
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -325,6 +413,24 @@
                 toggleIcon.classList.remove('bi-chevron-right');
                 toggleIcon.classList.add('bi-chevron-left');
             }
+        }
+        // --- FUNGSI BARU: MODAL PENILAIAN SIMPEL (Title Dinamis & Tanpa Komentar) ---
+        function openSimpleGradingModal(judul, nama, nim, filename, date, nilai) {
+            // 1. Set Judul Modal Sesuai Parameter 'judul'
+            document.getElementById('simpleModalTitle').innerHTML = '<i class="bi bi-pencil-square me-2"></i>' + judul;
+
+            // 2. Isi Data Mahasiswa & File
+            document.getElementById('simpleModalNama').innerText = nama;
+            document.getElementById('simpleModalNim').innerText = nim;
+            document.getElementById('simpleModalLinkFile').innerText = filename;
+            document.getElementById('simpleModalDate').innerText = "Dikirim: " + date;
+
+            // 3. Set Nilai
+            document.getElementById('simpleModalNilai').value = nilai;
+
+            // 4. Tampilkan Modal
+            var myModal = new bootstrap.Modal(document.getElementById('simpleGradingModal'));
+            myModal.show();
         }
 
         // --- LOGIKA MODAL PENILAIAN ---
