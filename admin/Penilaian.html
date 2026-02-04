@@ -32,7 +32,7 @@
         <p class="text-muted small px-2 mb-2 sidebar-text" style="font-size: 11px;">MENU UTAMA</p>
         <nav class="nav flex-column">
             <a class="nav-link-custom" href="dashboardAdmin.html"><i class="bi bi-grid"></i> <span class="sidebar-text">Dashboard</span></a>
-            <a class="nav-link-custom" href="materi.html"><i class="bi bi-file-text"></i> <span class="sidebar-text">Materi</span></a>
+            <a class="nav-link-custom" href="materi.html"><i class="bi bi-file-text"></i> <span class="sidebar-text">Praktikum</span></a>
             <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> <span class="sidebar-text">Data Kelas</span></a>
             <a class="nav-link-custom" href="progres.html"><i class="bi bi-bar-chart"></i> <span class="sidebar-text">Progress</span></a>
             <a class="nav-link-custom active" href="Penilaian.html"><i class="bi bi-award"></i> <span class="sidebar-text">Penilaian</span></a>
@@ -46,8 +46,8 @@
             <a class="nav-link-custom" href="../students/laporanPraktikum.html">
                 <i class="bi bi-clipboard-data"></i> <span class="sidebar-text">Laporan Praktikum</span>
             </a>
-            <a class="nav-link-custom" href="../students/laporanProject.html">
-                <i class="bi bi-folder-check"></i> <span class="sidebar-text">Laporan Project</span>
+            <a class="nav-link-custom" href="../students/laporanAkhir.html">
+                <i class="bi bi-folder-check"></i> <span class="sidebar-text">Laporan Akhir</span>
             </a>
         </nav>
     </div>
@@ -116,7 +116,7 @@
                         <tr>
                             <th width="5%" rowspan="2" class="align-middle">No</th>
                             <th rowspan="2" class="align-middle text-start">Nama & NIM</th>
-                            <th colspan="6" class="text-center">Laporan Praktikum (V-LAB)</th>
+                            <th colspan="4" class="text-center">Laporan Praktikum (V-LAB)</th>
                             <th colspan="4" class="text-center">Laporan Akhir</th>
                             <!-- <th width="15%" rowspan="2" class="align-middle">Laporan Project</th>
                             <th width="15%" rowspan="2" class="align-middle">Kemampuan Meta Kognisi</th>
@@ -128,8 +128,8 @@
                             <th width="5%">II</th>
                             <th width="5%">III</th>
                             <th width="5%">IV</th>
-                            <th width="5%">V</th>
-                            <th width="5%">VI</th>
+                            <!-- <th width="5%">V</th>
+                            <th width="5%">VI</th> -->
                             <th width="5%">Laporan Project</th>
                             <th width="5%">Kemampuan Meta Kognisi</th>
                             <th width="5%">Kemampuan Self_sistem</th>
@@ -145,17 +145,17 @@
                             </td>
                            
                             <td class="text-success status-clickable" onclick="openGradingModal('Dian Pratiwi', '7214839056', 'Laporan_VLab1_Dian.pdf', '27 Jan 2026', 85)">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-check-circle-fill fs-5"></i>
                             </td>
                             
                             <td class="text-success status-clickable" onclick="openGradingModal('Dian Pratiwi', '7214839056', 'Laporan_VLab2_Dian.pdf', '28 Jan 2026', 80)">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-check-circle-fill fs-5"></i>
                             </td>
                             
                             <td class="text-muted">-</td>
                             <td class="text-muted">-</td>
-                            <td class="text-muted">-</td>
-                            <td class="text-muted">-</td>
+                            <!-- <td class="text-muted">-</td>
+                            <td class="text-muted">-</td> -->
                             
                             <td class="text-center">
                                 <a href="#" class="text-decoration-none" 
@@ -167,17 +167,17 @@
 
                             <td class="text-success text-center status-clickable" 
                                 onclick="openSimpleGradingModal('Kemampuan Meta Kognisi', 'Dian Pratiwi', '7214839056', 'Meta_Dian.pdf', '31 Jan 2026', 85)">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-file-earmark-text-fill fs-5"></i>
                             </td>
 
                             <td class="text-success text-center status-clickable" 
                                 onclick="openSimpleGradingModal('Kemampuan Self Sistem', 'Dian Pratiwi', '7214839056', 'Self_Dian.pdf', '31 Jan 2026', 88)">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-file-earmark-text-fill fs-5"></i>
                             </td>
 
                             <td class="text-success text-center status-clickable" 
                                 onclick="openSimpleGradingModal('Penguasaan Konsep', 'Dian Pratiwi', '7214839056', 'Konsep_Dian.pdf', '31 Jan 2026', 90)">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-file-earmark-text-fill fs-5"></i>
                             </td>
                         </tr>
                         
@@ -189,13 +189,13 @@
                             </td>
                             
                             <td class="text-success status-clickable" onclick="openGradingModal('Rizky Nugroho', '7214839057', 'Laporan_VLab1_Rizky.pdf', '26 Jan 2026', 78)">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-check-circle-fill fs-5"></i>
                             </td>
                             <td class="text-muted">-</td>
                             <td class="text-muted">-</td>
                             <td class="text-muted">-</td>
-                            <td class="text-muted">-</td>
-                            <td class="text-muted">-</td>
+                            <!-- <td class="text-muted">-</td>
+                            <td class="text-muted">-</td> -->
                             <td class="text-center">
                                 <a href="#" class="text-decoration-none" 
                                 onclick="openProjectModal('Rizky Nugroho', '7214839057', 'Project.pdf', 'Presentasi.pptx', '30 Jan 2026', 97)">
@@ -204,17 +204,17 @@
                             </td>
                             <td class="text-warning text-center status-clickable" 
                                 onclick="openSimpleGradingModal('Kemampuan Meta Kognisi', 'Rizky Nugroho', '7214839057', 'Meta_Rizky.pdf', '31 Jan 2026', '')">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-file-earmark-text-fill fs-5"></i>
                             </td>
 
                             <td class="text-success text-center status-clickable" 
                                 onclick="openSimpleGradingModal('Kemampuan Self Sistem', 'Rizky Nugroho', '7214839057', 'Self_Rizky.pdf', '31 Jan 2026', 88)">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-file-earmark-text-fill fs-5"></i>
                             </td>
 
                             <td class="text-success text-center status-clickable" 
                                 onclick="openSimpleGradingModal('Penguasaan Konsep', 'Rizky Nugroho', '7214839057', 'Konsep_Rizky.pdf', '31 Jan 2026', 90)">
-                                <i class="bi bi-check-circle-fill"></i>
+                                <i class="bi bi-file-earmark-text-fill fs-5"></i>
                             </td>
                         </tr>
                     </tbody>

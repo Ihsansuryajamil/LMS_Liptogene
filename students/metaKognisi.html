@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirim Tugas - Libtrogen</title>
+    <title>Kemampuan Meta-Kognisi - Libtrogen</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../assets/style.css">
@@ -46,16 +46,17 @@
             </a>
             <a class="nav-link-custom" href="../admin/Penilaian.html"><i class="bi bi-award"></i> <span class="sidebar-text">Penilaian</span></a>
         </nav>
+        
         <p class="text-muted small px-2 mb-2 sidebar-text mt-3" style="font-size: 11px;">MENU MAHASISWA</p>
         
         <nav class="nav flex-column">
-            <a class="nav-link-custom active" href="materi.html">
-                <i class="bi bi-journal-text"></i> <span class="sidebar-text">Praktikum</span>
+            <a class="nav-link-custom" href="materi.html">
+                <i class="bi bi-journal-text"></i> <span class="sidebar-text">Materi</span>
             </a>
             <a class="nav-link-custom" href="laporanPraktikum.html">
                 <i class="bi bi-clipboard-data"></i> <span class="sidebar-text">Laporan Praktikum</span>
             </a>
-            <a class="nav-link-custom" href="../students/laporanAkhir.html">
+            <a class="nav-link-custom active" href="../students/laporanAkhir.html">
                 <i class="bi bi-folder-check"></i> <span class="sidebar-text">Laporan Akhir</span>
             </a>
         </nav>
@@ -68,11 +69,10 @@
         </div>
         <div class="offcanvas-body">
             <nav class="nav flex-column">
-                <a class="nav-link-custom" href="dashboardAdmin.html"><i class="bi bi-grid"></i> Dashboard</a>
-                <a class="nav-link-custom active" href="materi.html"><i class="bi bi-file-text"></i> Materi</a>
-                <a class="nav-link-custom" href="kelas.html"><i class="bi bi-people"></i> Data Kelas</a>
-                <a class="nav-link-custom" href="progres.html"><i class="bi bi-bar-chart"></i> Progress</a>
-                <a class="nav-link-custom" href="Penilaian.html"><i class="bi bi-award"></i> Penilaian</a>
+                <a class="nav-link-custom" href="../admin/dashboardAdmin.html"><i class="bi bi-grid"></i> Dashboard</a>
+                <a class="nav-link-custom" href="materi.html"><i class="bi bi-journal-text"></i> Materi</a>
+                <a class="nav-link-custom active" href="laporanPraktikum.html"><i class="bi bi-clipboard-data"></i> Laporan Praktikum</a>
+                <a class="nav-link-custom" href="#"><i class="bi bi-folder-check"></i> Laporan Project</a>
                 <a class="nav-link-custom text-danger mt-3" href="../login.html"><i class="bi bi-box-arrow-right"></i> Logout</a>
             </nav>
         </div>
@@ -81,12 +81,14 @@
     <div class="main-content" id="mainContent">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <div>
-                <h4 class="fw-bold">Kirim LKM</h4>
+                <h4 class="fw-bold m-0">Upload Tugas</h4>
+                <p class="text-muted small mb-0">Project Akhir Semester</p>
             </div>
+            
             <div class="d-flex align-items-center gap-3">
-                <a href="materi.html" class="btn btn-outline-secondary btn-sm px-3">
-                    <i class="bi bi-arrow-left"></i> Kembali
-                </a>
+                <a href="laporanAkhir.html" class="btn btn-outline-secondary btn-sm px-3">
+                        <i class="bi bi-arrow-left"></i> Kembali
+                    </a>
                 <div class="dropdown user-dropdown">
                     <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" data-bs-toggle="dropdown">
                         <!-- <div class="text-end me-3 d-none d-sm-block">
@@ -96,26 +98,37 @@
                         <div class="mhs-avatar">DI</div>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end border-0 shadow-sm mt-2">
-                        <li><a class="dropdown-item py-2" href="pengaturan.html">Pengaturan</a></li>
-                        <li><a class="dropdown-item py-2 text-danger" href="../login.html">Logout</a></li>
+                        <li><a class="dropdown-item py-2" href="pengaturan.html"><i class="bi bi-gear me-2"></i> Pengaturan</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item py-2 text-danger" href="../login.html"><i class="bi bi-box-arrow-right me-2"></i> Logout</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         
         <div class="row">
-            
             <div class="col-md-7 mb-4">
                 <div class="card card-custom p-4 h-100">
                     <h6 class="fw-bold text-dark mb-4">Form Pengumpulan</h6>
                     <form>
                         <div class="mb-3">
                             <label class="form-label fw-bold small">Nama Materi</label>
-                            <input type="text" class="form-control form-control-custom bg-light" value="Praktikum I - Isolasi DNA Plasmid E.Coli" readonly>
+                            <input type="text" class="form-control form-control-custom bg-light" value="Test Kemampuan Meta-Kognisi" readonly>
                         </div>
-
                         <div class="mb-4">
-                            <label class="form-label fw-bold small">Upload File Laporan</label>
+                            <label class="form-label fw-bold small">Soal Pertanyaan</label>
+                            <a href="../Materi Isolasi DNA Plasmid E.pdf" class="card card-body p-2 flex-row align-items-center text-decoration-none border shadow-sm mb-2">
+                                <div class="me-3 text-danger"><i class="bi bi-file-earmark-pdf fs-4"></i></div>
+                                <div class="overflow-hidden">
+                                    <div class="text-dark fw-bold text-truncate" style="font-size: 0.85rem;">Pertanyaan-Meta-Kognisi.pdf</div>
+                                    <div class="text-muted small" style="font-size: 0.7rem;">PDF Document</div>
+                                </div>
+                                <!-- <div class="ms-auto text-success"><i class="bi bi-check-circle-fill"></i></div> -->
+                            </a>
+                        </div>
+                        <hr>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold small">Upload File Jawaban</label>
                             <input type="file" class="form-control form-control-custom" accept=".pdf, .doc, .docx, .xls, .xlsx" style="font-size: 0.9rem;">
                             <div class="form-text text-muted small">
                                 <i class="bi bi-info-circle me-1"></i> Format diizinkan: PDF, Word, Excel. Maksimal 5MB.
@@ -133,48 +146,50 @@
             
             <div class="col-md-5 mb-4">
                 <div class="card card-custom p-4 h-100 bg-light border-0">
-                    <h6 class="fw-bold text-primary mb-4"><i class="bi bi-clock-history me-2"></i> Status Pengumpulan</h6>
+                    <h6 class="fw-bold text-muted mb-4"><i class="bi bi-clock-history me-2"></i> Status Pengumpulan</h6>
                     
                     <div class="text-center mb-4 p-3 bg-white rounded shadow-sm border">
-                        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem; letter-spacing: 1px;">Nilai Anda</small>
-                        <div class="display-4 fw-bold text-success mt-1">85</div>
-                        <span class="badge bg-success bg-opacity-10 text-success rounded-pill px-3">Lulus / Kompeten</span>
+                        <small class="text-muted text-uppercase fw-bold" style="font-size: 0.7rem;">Nilai Project</small>
+                        <div class="display-4 fw-bold text-muted mt-1">-</div>
+                        <span class="badge bg-secondary bg-opacity-10 text-secondary rounded-pill px-3">Belum Dinilai</span>
                     </div>
 
-                    <div class="mb-4">
-                        <label class="form-label small fw-bold text-muted">File Terkirim</label>
-                        <a href="../Materi Isolasi DNA Plasmid E.pdf" target="_blank" class="card card-body p-2 flex-row align-items-center text-decoration-none border shadow-sm hover-shadow">
-                            <div class="bg-danger bg-opacity-10 text-danger rounded p-2 me-3">
-                                <i class="bi bi-file-earmark-pdf fs-4"></i>
-                            </div>
+                    <div class="mb-3">
+                        <label class="form-label small fw-bold text-muted">File Terkirim</label><br>
+                        <label class="form-label small text-danger">-</label>
+                        <!-- <a href="../Materi Isolasi DNA Plasmid E.pdf" class="card card-body p-2 flex-row align-items-center text-decoration-none border shadow-sm mb-2">
+                            <div class="me-3 text-danger"><i class="bi bi-file-earmark-pdf fs-4"></i></div>
                             <div class="overflow-hidden">
-                                <div class="text-dark fw-bold text-truncate" style="font-size: 0.9rem;">Laporan_LKM_Didin.pdf</div>
-                                <div class="text-muted small" style="font-size: 0.75rem;">Dikirim: 30 Jan 2026, 14:30 WIB</div>
+                                <div class="text-dark fw-bold text-truncate" style="font-size: 0.85rem;">Laporan_Project_Didin.pdf</div>
+                                <div class="text-muted small" style="font-size: 0.7rem;">PDF Document</div>
                             </div>
-                            <div class="ms-auto text-muted">
-                                <i class="bi bi-box-arrow-up-right"></i>
-                            </div>
+                            <div class="ms-auto text-success"><i class="bi bi-check-circle-fill"></i></div>
                         </a>
+                        <a href="../Laporan Project (contoh).pptx" class="card card-body p-2 flex-row align-items-center text-decoration-none border shadow-sm">
+                            <div class="me-3 text-warning"><i class="bi bi-file-earmark-ppt fs-4"></i></div>
+                            <div class="overflow-hidden">
+                                <div class="text-dark fw-bold text-truncate" style="font-size: 0.85rem;">Presentasi_Didin.pptx</div>
+                                <div class="text-muted small" style="font-size: 0.7rem;">PowerPoint Presentation</div>
+                            </div>
+                            <div class="ms-auto text-success"><i class="bi bi-check-circle-fill"></i></div>
+                        </a> -->
                     </div>
-
-                    <div>
+                    <!-- <div>
                         <label class="form-label small fw-bold text-muted">Umpan Balik Dosen</label>
                         <div class="alert alert-warning border-warning bg-warning bg-opacity-10 small text-dark mb-0">
                             <i class="bi bi-chat-quote-fill me-1 text-warning"></i>
                             <strong>Komentar:</strong><br>
                             "Analisis data sudah cukup baik dan runut. Namun, tolong perhatikan kembali format penulisan daftar pustaka sesuai panduan di modul halaman 12. Selebihnya sudah oke."
                         </div>
-                    </div>
-
+                    </div> -->
                 </div>
             </div>
-            
         </div>
+        
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Toggle Sidebar
         function toggleSidebar() {
             const sidebar = document.getElementById('sidebar');
             const mainContent = document.getElementById('mainContent');
@@ -188,23 +203,6 @@
                 toggleIcon.classList.remove('bi-chevron-right');
                 toggleIcon.classList.add('bi-chevron-left');
             }
-        }
-
-        // Logic Tombol Remedial
-        function showRemedial() {
-            // Sembunyikan tombol tambah
-            document.getElementById('btnRemedialContainer').classList.add('d-none');
-            // Munculkan input remedial
-            document.getElementById('inputRemedialContainer').classList.remove('d-none');
-        }
-
-        function hideRemedial() {
-            // Munculkan kembali tombol tambah
-            document.getElementById('btnRemedialContainer').classList.remove('d-none');
-            // Sembunyikan input remedial
-            document.getElementById('inputRemedialContainer').classList.add('d-none');
-            // Opsional: Reset value input file jika dibatalkan
-            // document.querySelector('#inputRemedialContainer input').value = '';
         }
     </script>
 </body>
